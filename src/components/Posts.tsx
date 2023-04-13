@@ -1,7 +1,7 @@
 // in src/posts.tsx
 import {
     List,
-    Datagrid,
+    DatagridConfigurable,
     TextField,
     ReferenceField,
     EditButton,
@@ -10,20 +10,35 @@ import {
     SimpleForm,
     ReferenceInput,
     TextInput,
-    useRecordContext
+    useRecordContext,
+    TopToolbar,
+    SelectColumnsButton,
+    CreateButton,
+    ExportButton,
+    FilterButton
   } from "react-admin";
   const postFilters = [
     <TextInput source="q" label="Search" alwaysOn />,
     <ReferenceInput source="userId" label="User" reference="users" />,
 ];
+
+const PostListActions = () => (
+  <TopToolbar>
+      <SelectColumnsButton />
+      <FilterButton />
+      <CreateButton />
+      <ExportButton />
+  </TopToolbar>
+);
+
 export const PostList = () => (
-  <List filters={postFilters}>
-    <Datagrid rowClick="edit">
+  <List filters={postFilters} actions={<PostListActions />}>
+    <DatagridConfigurable rowClick="edit">
     <TextField source="id" />
     <ReferenceField source="userId" reference="users" />
     <TextField source="title" />
     <EditButton />
-    </Datagrid>
+    </DatagridConfigurable>
   </List>
 );
 const PostTitle = () => {

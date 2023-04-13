@@ -1,3 +1,8 @@
+:root {
+  --input-color: #3530978a;
+  --btn-color:#3b33aa;
+}
+
 .App {
   text-align: center;
 }

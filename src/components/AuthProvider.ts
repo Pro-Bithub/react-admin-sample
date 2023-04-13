@@ -1,7 +1,7 @@
 // TypeScript users must reference the type: `AuthProvider`
 export const authProvider = {
     // called when the user attempts to log in
-    login: ({ username }) => {
+    login: ({ username }: { username: string }) => {
       localStorage.setItem("username", username);
       // accept all username/password combinations
       return Promise.resolve();
@@ -12,7 +12,7 @@ export const authProvider = {
       return Promise.resolve();
     },
     // called when the API returns an error
-    checkError: ({ status }) => {
+    checkError:  ({ status }: { status: number })=> {
       if (status === 401 || status === 403) {
         localStorage.removeItem("username");
         return Promise.reject();
