@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 
-<<<<<<< HEAD
-import { Grid } from '@mui/material';
-=======
 import { Card, CardContent } from '@mui/material';
 import { Title } from 'react-admin'
->>>>>>> 106d64a8eac1cacad47b36e38eed2bb9cc6f2753
 
 function SettingsPage() {
   // Définir l'état initial des préférences utilisateur
@@ -17,22 +13,6 @@ function SettingsPage() {
   });
 
   // Fonction pour mettre à jour les préférences utilisateur
-<<<<<<< HEAD
-  function updatePrefs(event: React.ChangeEvent<HTMLInputElement>) {
-    const { name, value, checked } = event.target;
-  
-    setUserPrefs((prevPrefs) => ({
-      ...prevPrefs,
-      [name]: value === 'checkbox' ? checked : value,
-    }));
-  }
-  
-
-  return (
-    <Grid container spacing={2} mt={1}>
-    <Grid item xs={12} md={3}>
-    <form>
-=======
   function updatePrefs(event) {
     const { name, value, type, checked } = event.target;
 
@@ -49,7 +29,6 @@ function SettingsPage() {
         <Title title="Settings" />
         <CardContent>
         <form>
->>>>>>> 106d64a8eac1cacad47b36e38eed2bb9cc6f2753
         <div>
           <label htmlFor="notifications">Notificationss</label>
           <input
