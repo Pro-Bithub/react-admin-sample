@@ -69,19 +69,8 @@ function SettingsPage() {
           </select>
         </div>
       </form>
-<<<<<<< HEAD
-  
-    </Grid>
-    <Grid item xs={12} md={9}>
-     
-    </Grid>
-</Grid>
-
- 
-=======
         </CardContent>
     </Card>
->>>>>>> 106d64a8eac1cacad47b36e38eed2bb9cc6f2753
 
 
    
