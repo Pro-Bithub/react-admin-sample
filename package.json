@@ -11,6 +11,7 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "firebase": "^9.20.0",
     "ra-data-json-server": "^4.9.2",
     "ra-data-simple-rest": "^4.9.2",
     "react": "^18.2.0",

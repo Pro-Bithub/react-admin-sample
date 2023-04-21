@@ -1,12 +1,32 @@
 import { useParams } from 'react-router-dom';
 import '../chat.css'
+import { db } from "../firebaseConfig";
+import { getFirestore, collection, query, orderBy, onSnapshot } from "firebase/firestore";
+import { useState ,useEffect } from 'react';
 interface BodyChatProps {
   chatId: string;
 }
 
 const BodyChat = ({ chatId }: BodyChatProps) => {
   const { id } = useParams<{ id: string }>();
+  const [messages, setMessages] = useState([]);
+  useEffect(() => {
+    if (chatId) {
+      const messagesRef = collection(db, "chats", chatId, "messages");
+      const messagesQuery = query(messagesRef, orderBy("timestamp", "asc"));
 
+      const unsubscribe = onSnapshot(messagesQuery, (snapshot) => {
+        setMessages(
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            data: doc.data(),
+          }))
+        );
+      });
+
+      return () => unsubscribe();
+    }
+  }, [chatId]);
   return (
     <>
     
@@ -37,7 +57,12 @@ const BodyChat = ({ chatId }: BodyChatProps) => {
         Uh, what is this guy's problem, Mr. Stark? 🤔
       </div>
       <div className="message stark">
-        Uh, he's from space, he came here to steal a necklace from a wizard.
+    {/*   {messages.map((message) => (
+        <div key={message.id}>
+          <p>{message.data.message}</p>
+          <p>{message.data.sender}</p>
+        </div>
+      ))} */} hi 
       </div>
       <div className="message stark">
         <div className="typing typing-1"></div>
