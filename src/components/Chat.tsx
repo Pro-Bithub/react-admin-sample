@@ -1,13 +1,18 @@
 import * as React from 'react';
-import { Grid } from '@mui/material';
+import { Grid,LinearProgress  } from '@mui/material';
 import { useState } from 'react';
 import BodyChat from './Bodychat';
+import Newchat from './Newchat';
 import '../chat.css'
 import { Link } from 'react-router-dom';
 
+
 export const Chat = () => {
     const [chatId, setChatId] = useState(null);
+    const [loading, setLoading] = useState(true);
+   
     const handleChatClick = (id) => {
+      setLoading(false);
       setChatId(id);
     };
 
@@ -49,7 +54,8 @@ export const Chat = () => {
         </Link>
       ))}
   </div>
-  {chatId}
+  {loading && <LinearProgress />}
+  {!chatId && <Newchat />}
   {chatId && <BodyChat chatId={chatId} />}
             </div>
         </Grid>

@@ -49,10 +49,10 @@ const BodyChat = ({ chatId }: BodyChatProps) => {
       <i className="fas fa-camera"></i><i className="far fa-laugh-beam"></i><input placeholder="Type your message here!" type="text" /><i className="fas fa-microphone"></i>
     </div>
   </div>
-    <div>
+ {/*    <div>
       <h1>Chat with ID {chatId}</h1>
       <p>Current URL parameter: {id}</p>
-    </div>
+    </div> */}
     </>
   );
 };
