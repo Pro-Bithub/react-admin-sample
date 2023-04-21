@@ -13,7 +13,7 @@ import SettingsPage from './components/SettingsPage';
 import SignUpPage from './components/SignupPage';
 import Layout from './components/Layout';
 import { Chat } from "./components/Chat";
-
+import BodyChat from "./components/Bodychat";
 const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
 
 const App = () => (
@@ -25,6 +25,7 @@ const App = () => (
             <Route path="/settings" element={<SettingsPage />} />
 
             <Route path="/chat" element={<Chat />} />
+            <Route path="/chat/:chatId" element={<Chat/>} />
      </CustomRoutes>
      <CustomRoutes noLayout>
             <Route path="/register" element={<SignUpPage />} />

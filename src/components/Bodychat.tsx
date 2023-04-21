@@ -1,29 +1,16 @@
-import { useState } from 'react';
-
-import BodyChat from './Bodychat';
+import { useParams } from 'react-router-dom';
 import '../chat.css'
-import { Link } from 'react-router-dom';
-const RecentChatsMenuItem = () => {
-  const [chatId, setChatId] = useState(null);
-  const handleChatClick = (id) => {
-    setChatId(id);
-  };
-const linkStyle = {
-    color: 'rgb(59, 51, 170)',
-    textDecoration: 'none',
-    fontWeight: 'bold',
-    fontSize: '1.2rem'
-  };
-// You can replace this data with your own data source
-const recentChats = [
-  { id: 1, title: 'Chat with John', path: '/chat/1' },
-  { id: 2, title: 'Chat with Jane', path: '/chat/2' },
-  { id: 3, title: 'Chat with Bob', path: '/chat/3' },
-];
-return (
-<>
- 
- {/*  <div className="chat">
+interface BodyChatProps {
+  chatId: string;
+}
+
+const BodyChat = ({ chatId }: BodyChatProps) => {
+  const { id } = useParams<{ id: string }>();
+
+  return (
+    <>
+    
+    <div className="chat">
     <div className="contact bar">
       <div className="pic stark"></div>
       <div className="name">
@@ -61,9 +48,13 @@ return (
     <div className="input">
       <i className="fas fa-camera"></i><i className="far fa-laugh-beam"></i><input placeholder="Type your message here!" type="text" /><i className="fas fa-microphone"></i>
     </div>
-  </div> */}
-</>
+  </div>
+    <div>
+      <h1>Chat with ID {chatId}</h1>
+      <p>Current URL parameter: {id}</p>
+    </div>
+    </>
   );
-  
-}
-export default RecentChatsMenuItem;
+};
+
+export default BodyChat;

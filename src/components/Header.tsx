@@ -20,7 +20,7 @@ const Header = () => {
     }
 
     return (
-        <Box component="nav" sx={{ flexGrow: 1 }}>
+        <Box component="nav" sx={{ flexGrow: 1 , bgcolor: 'rgb(59, 51, 170)'}}>
             <AppBar position="static" color="primary">
                 <Toolbar variant="dense">
                 <Box flex={1} display="flex" justifyContent="space-between" marginBottom={0}>

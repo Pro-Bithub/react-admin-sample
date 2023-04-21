@@ -10,7 +10,7 @@ body, html {
 
 .center {
   position: absolute;
-  top: 50%;
+  top: 58%;
   left: calc(50% + 12rem);
   transform: translate(-50%, -50%);
 }
@@ -55,7 +55,7 @@ body, html {
   border-radius: 1rem;
   top: 0;
   left: 2.5rem;
-  background: #333;
+  background: rgb(59, 51, 170);
   color: white;
 }
 
@@ -99,7 +99,7 @@ body, html {
   flex-direction: column;
   justify-content: space-between;
   width: 76rem;
-  height: 38rem;
+  height: 38.5rem;
   z-index: 2;
   box-sizing: border-box;
   border-radius: 1rem;
