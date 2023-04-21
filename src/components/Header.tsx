@@ -6,6 +6,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import SettingsIcon from '@mui/icons-material/Settings';
 import EventIcon from '@mui/icons-material/Event';
 import ChatIcon from '@mui/icons-material/Chat';
+import HomeIcon from '@mui/icons-material/Home';
 
 const Header = () => {
     const location = useLocation();
@@ -44,6 +45,14 @@ const Header = () => {
       indicatorColor="secondary"
       textColor="inherit"
     >
+        <Tab
+        icon={<HomeIcon />}
+        iconPosition="start"
+        label="Accueil"
+        component={Link}
+        to="/home"
+        value="/home"
+      />
       <Tab
         icon={<ChatIcon />}
         iconPosition="start"
@@ -55,7 +64,7 @@ const Header = () => {
       <Tab
         icon={<EventIcon />}
         iconPosition="start"
-        label={'meetings'}
+        label={'Réunions'}
         component={Link}
         to="/meetings"
         value="/meetings"
@@ -63,7 +72,7 @@ const Header = () => {
       <Tab
         icon={<SettingsIcon />}
         iconPosition="start"
-        label={'settings'}
+        label={'Paramètres'}
         component={Link}
         to="/settings"
         value="/settings"
