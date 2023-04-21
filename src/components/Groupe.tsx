@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Grid } from '@mui/material';
 
-import { Welcome } from './Welcome';
+import Welcome from './Welcome';
 
 export const Groupe = () => (
     <Grid container spacing={2} mt={1}>

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Grid } from '@mui/material';
 
-import { Welcome } from './Welcome';
-import RecentChatsMenuItem from './RecentChatsMenuItem';
 
+import RecentChatsMenuItem from './RecentChatsMenuItem';
+import Welcome from './Welcome';
 export const Chat = () => (
 
     <Grid container spacing={2} mt={1}>

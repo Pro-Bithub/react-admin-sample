@@ -1,15 +1,19 @@
 import * as React from 'react';
-import {
-    Typography,
-    Card,
-    CardContent,
-    CardActions,
-    Button,
-} from '@mui/material';
+import { useTranslate } from 'react-admin';
 import HomeIcon from '@mui/icons-material/Home';
 import CodeIcon from '@mui/icons-material/Code';
 import '../chat.css'
-export const Welcome = () => (
+const Welcome = () => {
+
+const translate = useTranslate();
+
+// You can replace this data with your own data source
+const recentChats = [
+  { id: 1, title: 'Chat with John', path: '/chats/1' },
+  { id: 2, title: 'Chat with Jane', path: '/chats/2' },
+  { id: 3, title: 'Chat with Bob', path: '/chats/3' },
+];
+return (
     <div className="center">
     <div className="contacts">
       <i className="fas fa-bars fa-2x"></i>
@@ -114,4 +118,7 @@ export const Welcome = () => (
       </div>
     </div>
   </div>
-);
+  );
+  
+}
+export default Welcome;
