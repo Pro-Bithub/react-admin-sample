@@ -14,20 +14,27 @@ import GroupAddIcon from '@material-ui/icons/GroupAdd';
 import EventIcon from '@material-ui/icons/Event';
 import Button from '@mui/material/Button';
 import '../App.css'
+const styles = {
+    backgroundColor: '#3b33aa',
+    margin: '10px'
+  };
+
 export const Home = () => {
-    const [date, setDate] = useState(new Date());
+    const date = new Date();
+
     return (  
          <Grid container spacing={2} mt={1}>
         <Grid item xs={12} md={8}>
             <div className="home-btn">
-            <Button variant="contained" size="large" startIcon={<GroupAddIcon />} style={{margin: '0 10px'}}>
-  Rejoindre
+            <Button variant="contained" size="large" startIcon={<PlayCircleFilledIcon />} style={{  backgroundColor: styles.backgroundColor, margin: styles.margin  }}>
+Démarrer
+</Button> 
+            <Button variant="contained" size="large" startIcon={<GroupAddIcon />} style={{  backgroundColor: styles.backgroundColor, margin: styles.margin  }}>
+            Rejoindre
 </Button>
-<Button variant="contained" size="large" startIcon={<PlayCircleFilledIcon />} style={{margin: '0 10px'}}>
-  Démarrer
-</Button>
-<Button variant="contained" size="large" startIcon={<EventIcon />} style={{margin: '0 10px'}}>
-  Planifier
+
+<Button variant="contained" size="large" startIcon={<EventIcon />} style={{  backgroundColor: styles.backgroundColor, margin: styles.margin  }}>
+Planifier
 </Button>
 
             </div>
@@ -37,25 +44,26 @@ export const Home = () => {
         <Grid item xs={12} md={4}>
         <Card>
                             <CardMedia
-                                image={`https://marmelab.com/posters/fr-1.jpeg`}
-                                sx={{ height: 140 }}
+                                image={`/meeting_re_i53h.svg`}
+                                sx={{ height: 150 }}
                             />
-                            <CardContent sx={{ paddingBottom: '0.5em' }}>
-                                <Typography
-                                    variant="h5"
-                                    component="h2"
-                                    align="center"
-                                >
-                        Date avec secondes: {date.toLocaleString()}
-              
 
-                                </Typography>
+                            <CardContent sx={{ paddingBottom: '0.5em' }}>
+                            <Typography variant="h3" component="h3" align="center">
+  {date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}
+</Typography>
+<Typography variant="h5" component="h5" align="center">
+  {date.toLocaleString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}
+</Typography>
+
                                 <Typography
                                     variant="h5"
                                     component="h2"
                                     align="center"
-                                >          Ma réunion <Button variant="contained"   style={{margin: '0 10px'}}>
-                                Démarrer</Button>
+                                >          Ma réunion <Button variant="contained" style={{  backgroundColor: '#3530978a',   margin: '0 10px' }}>
+                                Démarrer
+                              </Button>
+                              
                                       </Typography>  
                             </CardContent>
                             <CardActions

@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 export const Chat = () => {
     const [chatId, setChatId] = useState(null);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
    
     const handleChatClick = (id) => {
       setLoading(false);

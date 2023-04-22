@@ -62,7 +62,7 @@ const BodyChat = ({ chatId }: BodyChatProps) => {
           <p>{message.data.message}</p>
           <p>{message.data.sender}</p>
         </div>
-      ))} */} hi 
+      ))} */} 
       </div>
       <div className="message stark">
         <div className="typing typing-1"></div>
