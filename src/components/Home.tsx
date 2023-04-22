@@ -14,6 +14,8 @@ import GroupAddIcon from '@material-ui/icons/GroupAdd';
 import EventIcon from '@material-ui/icons/Event';
 import Button from '@mui/material/Button';
 import '../App.css'
+import { useNavigate } from 'react-router-dom';
+
 const styles = {
     backgroundColor: '#3b33aa',
     margin: '10px'
@@ -21,6 +23,10 @@ const styles = {
 
 export const Home = () => {
     const date = new Date();
+    const navigate = useNavigate();
+    const handleButtonClick = () => {
+        navigate('/join');
+    };
 
     return (  
          <Grid container spacing={2} mt={1}>
@@ -29,7 +35,7 @@ export const Home = () => {
             <Button variant="contained" size="large" startIcon={<PlayCircleFilledIcon />} style={{  backgroundColor: styles.backgroundColor, margin: styles.margin  }}>
 Démarrer
 </Button> 
-            <Button variant="contained" size="large" startIcon={<GroupAddIcon />} style={{  backgroundColor: styles.backgroundColor, margin: styles.margin  }}>
+            <Button variant="contained" onClick={handleButtonClick}  size="large" startIcon={<GroupAddIcon />} style={{  backgroundColor: styles.backgroundColor, margin: styles.margin  }}>
             Rejoindre
 </Button>
 
