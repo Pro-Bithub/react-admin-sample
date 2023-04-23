@@ -1,12 +1,14 @@
 import React from 'react';
 import { Tabs, Tab, Toolbar, AppBar, Box, Typography } from '@mui/material';
 import { Link, matchPath, useLocation } from 'react-router-dom';
-import { UserMenu, Logout, LoadingIndicator } from 'react-admin';
-import PhoneIcon from '@mui/icons-material/Phone';
+import { UserMenu, LoadingIndicator } from 'react-admin';
+
 import SettingsIcon from '@mui/icons-material/Settings';
 import EventIcon from '@mui/icons-material/Event';
 import ChatIcon from '@mui/icons-material/Chat';
 import HomeIcon from '@mui/icons-material/Home';
+import LogoutButton from './LogoutButton';
+import ProfileButton from './ProfileButton';
 
 const Header = () => {
     const location = useLocation();
@@ -87,8 +89,9 @@ const Header = () => {
             },
         }}
     />
-    <UserMenu>
-        <Logout />
+    <UserMenu>     <ProfileButton />
+        <LogoutButton href="/"  />
+   
     </UserMenu>
 </Box>
 

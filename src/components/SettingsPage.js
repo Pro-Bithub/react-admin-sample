@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import { Card, CardContent } from '@mui/material';
+import {Grid , Card, CardContent ,Checkbox,Box} from '@mui/material';
 import { Title } from 'react-admin'
-
+import SettingsIcon from '@mui/icons-material/Settings';
 function SettingsPage() {
   // Définir l'état initial des préférences utilisateur
   const [userPrefs, setUserPrefs] = useState({
@@ -23,38 +23,47 @@ function SettingsPage() {
   }
 
   return (
-
-    
-    <Card>
+    <Grid container spacing={2} mt={1}>
+         <Grid item xs={12} md={12}>
+         <Box display="flex" alignItems="center">
+                <Box ml={2} mr={2} display="flex">
+                    <SettingsIcon color="disabled" fontSize="large" />
+                </Box>
+               Paramètres
+             
+            </Box>
+         </Grid>
+        <Grid item xs={12} md={9}>
+        <Card>
         <Title title="Settings" />
         <CardContent>
         <form>
         <div>
-          <label htmlFor="notifications">Notificationss</label>
-          <input
-            type="checkbox"
-            name="notifications"
-            checked={userPrefs.notifications}
-            onChange={updatePrefs}
-          />
+          <label htmlFor="notifications">Notifications</label>
+          <Checkbox
+  name="notifications"
+  checked={userPrefs.notifications}
+  onChange={updatePrefs} label="Large" size="lg"
+/>
         </div>
         <div>
           <label htmlFor="audio">Audio</label>
-          <input
-            type="checkbox"
-            name="audio"
-            checked={userPrefs.audio}
-            onChange={updatePrefs}
-          />
+<Checkbox
+  name="audio"
+  checked={userPrefs.audio}
+  onChange={updatePrefs} label="Large" size="lg"
+/>
+
         </div>
         <div>
           <label htmlFor="video">Video</label>
-          <input
-            type="checkbox"
-            name="video"
-            checked={userPrefs.video}
-            onChange={updatePrefs}
-          />
+     
+          <Checkbox
+  name="video"
+  checked={userPrefs.video}
+  onChange={updatePrefs} label="Large" size="lg"
+/>
+
         </div>
         <div>
           <label htmlFor="security">Security</label>
@@ -71,6 +80,11 @@ function SettingsPage() {
       </form>
         </CardContent>
     </Card>
+        </Grid>
+       
+    </Grid>
+    
+   
 
 
    
