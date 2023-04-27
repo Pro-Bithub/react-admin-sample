@@ -3,6 +3,11 @@ import React, { useState } from 'react';
 import {Grid , Card, CardContent ,Checkbox,Box} from '@mui/material';
 import { Title } from 'react-admin'
 import SettingsIcon from '@mui/icons-material/Settings';
+import Button from '@mui/material/Button';
+const styles = {
+  backgroundColor: '#3b33aa',
+  margin: '10px'
+};
 function SettingsPage() {
   // Définir l'état initial des préférences utilisateur
   const [userPrefs, setUserPrefs] = useState({
@@ -77,6 +82,9 @@ function SettingsPage() {
             <option value="high">High</option>
           </select>
         </div>
+        <Button variant="contained"  size="large" style={{  backgroundColor: styles.backgroundColor, margin: styles.margin  }}  >
+        Enregistrer
+</Button>
       </form>
         </CardContent>
     </Card>

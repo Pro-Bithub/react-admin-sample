@@ -58,7 +58,7 @@ const Header = () => {
       <Tab
         icon={<ChatIcon />}
         iconPosition="start"
-        label="chat"
+        label="Chat de groupe"
         component={Link}
         to="/chat"
         value="/chat"
