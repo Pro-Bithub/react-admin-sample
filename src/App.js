@@ -16,6 +16,7 @@ import {Home} from "./components/Home";
 import JoinPage from "./components/JoinPage";
 import Profile from "./components/Profile";
 import Meetings from "./components/meetings";
+import Planifier from "./components/Planifier";
 
 const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
 
@@ -32,6 +33,7 @@ const App = () => (
             <Route path="/chat/:chatId" element={<Chat/>} />
             <Route path="/join" element={<JoinPage />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/planifier" element={<Planifier />} />
             <Route path="/meetings" element={<Meetings />} />
      </CustomRoutes>
      <CustomRoutes noLayout>

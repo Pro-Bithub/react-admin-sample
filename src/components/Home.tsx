@@ -30,6 +30,10 @@ export const Home = () => {
     const handleButtonClickMeeting = () => {
         navigate('/meetings');
     };
+    const handleButtonClickplanifier = () => {
+        navigate('/planifier');
+    };
+    
     return (  
          <Grid container spacing={2} mt={1}>
         <Grid item xs={12} md={8}>
@@ -41,7 +45,7 @@ Démarrer
             Rejoindre
 </Button>
 
-<Button variant="contained" size="large" startIcon={<EventIcon />} style={{  backgroundColor: styles.backgroundColor, margin: styles.margin  }}>
+<Button variant="contained" size="large" onClick={handleButtonClickplanifier}  startIcon={<EventIcon />} style={{  backgroundColor: styles.backgroundColor, margin: styles.margin  }}>
 Planifier
 </Button>
 
