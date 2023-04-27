@@ -24,18 +24,20 @@ const styles = {
 export const Home = () => {
     const date = new Date();
     const navigate = useNavigate();
-    const handleButtonClick = () => {
+    const handleButtonClickRejoindre = () => {
         navigate('/join');
     };
-
+    const handleButtonClickMeeting = () => {
+        navigate('/meetings');
+    };
     return (  
          <Grid container spacing={2} mt={1}>
         <Grid item xs={12} md={8}>
             <div className="home-btn">
-            <Button variant="contained" size="large" startIcon={<PlayCircleFilledIcon />} style={{  backgroundColor: styles.backgroundColor, margin: styles.margin  }}>
+            <Button variant="contained" onClick={handleButtonClickMeeting} size="large" startIcon={<PlayCircleFilledIcon />} style={{  backgroundColor: styles.backgroundColor, margin: styles.margin  }}>
 Démarrer
 </Button> 
-            <Button variant="contained" onClick={handleButtonClick}  size="large" startIcon={<GroupAddIcon />} style={{  backgroundColor: styles.backgroundColor, margin: styles.margin  }}>
+            <Button variant="contained" onClick={handleButtonClickRejoindre}  size="large" startIcon={<GroupAddIcon />} style={{  backgroundColor: styles.backgroundColor, margin: styles.margin  }}>
             Rejoindre
 </Button>
 
@@ -62,7 +64,7 @@ Planifier
   {date.toLocaleString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}
 </Typography>
 
-                                <Typography
+                             {/*    <Typography
                                     variant="h5"
                                     component="h2"
                                     align="center"
@@ -70,7 +72,7 @@ Planifier
                                 Démarrer
                               </Button>
                               
-                                      </Typography>  
+                                      </Typography>  */} 
                             </CardContent>
                             <CardActions
                                 sx={{
