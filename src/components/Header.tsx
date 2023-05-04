@@ -50,6 +50,31 @@ const Header = () => {
         <Tab
         icon={<HomeIcon />}
         iconPosition="start"
+        label="Trouver un professeur "
+        component={Link}
+        to="/home"
+        value="/home"
+      />
+        <Tab
+        icon={<HomeIcon />}
+        iconPosition="start"
+        label="Trouver un cours en groupe"
+        component={Link}
+        to="/home"
+        value="/home"
+      />
+           <Tab
+        icon={<HomeIcon />}
+        iconPosition="start"
+        label="Mes cours en groupe"
+        component={Link}
+        to="/home"
+        value="/home"
+      />
+
+        <Tab
+        icon={<HomeIcon />}
+        iconPosition="start"
         label="Accueil"
         component={Link}
         to="/home"
