@@ -17,14 +17,17 @@ import JoinPage from "./components/JoinPage";
 import Profile from "./components/Profile";
 import Meetings from "./components/meetings";
 import Planifier from "./components/Planifier";
+import { CourList } from "./components/Courgroups";
+import { dataProvider } from "./dataProvider";
 
-const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
+/* const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com'); */
 
 const App = () => (
   <Admin menu={MyMenu}  layout={Layout}   title="VISIOCALL"  authProvider={authProvider}  dataProvider={dataProvider}  dashboard={Dashboard} loginPage={LoginPage}>
  {/* <Resource name="posts" list={PostList}  edit={PostEdit}   create={PostCreate}  icon={PostIcon} /> */}
     <Resource name="users" list={UserList}   icon={UserIcon}  recordRepresentation="name"  />
-  
+    <Resource name="posts" list={CourList}   icon={UserIcon}  recordRepresentation="name"  />
+ 
     <CustomRoutes>
             <Route path="/settings" element={<SettingsPage />} />
             <Route path="/home" element={<Home />} />
